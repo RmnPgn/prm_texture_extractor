@@ -14,6 +14,7 @@ from PySide2.QtWidgets import (
 from PySide2.QtCore import Qt
 import ui
 
+
 def inputs_module():
     """
     Create the widget with all the inputs for the UI.
@@ -28,7 +29,7 @@ def inputs_module():
     project_root_line_edit = QLineEdit()
     project_root_button = QPushButton("Explorer")
 
-    maya_scene_label = QLabel("Project root : ")
+    maya_scene_label = QLabel("Maya ASCII scene : ")
     maya_scene_line_edit = QLineEdit()
     maya_scene_button = QPushButton("Explorer")
 
@@ -51,7 +52,17 @@ def inputs_module():
     input_layout.setHorizontalSpacing(4)
     input_layout.setVerticalSpacing(2)
 
-    return input_widget, project_root_button
+    input_module_dict = {
+                         "widget": input_widget,
+                         "project_root_button": project_root_button,
+                         "project_root_line_edit": project_root_line_edit,
+                         "destination_line_edit": destination_line_edit,
+                         "destination_button": destination_button,
+                         "maya_scene_line_edit": maya_scene_line_edit,
+                         "maya_scene_button": maya_scene_button
+                        }
+
+    return input_module_dict
 
 
 def visualization_module():
