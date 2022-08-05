@@ -1,5 +1,5 @@
 import sys
-from PySide2.QtWidgets import ( QApplication )
+from PySide2.QtWidgets import (QApplication)
 import ui
 
 app = QApplication(sys.argv)
