@@ -13,10 +13,13 @@ from PySide2.QtWidgets import (
                                )
 from PySide2.QtCore import QSize, Qt
 import ui_modules
+import func_open_file_dialog
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
+
+        self.project_root = ""
 
         main_layout = QGridLayout()
         self.setLayout(main_layout)
@@ -25,7 +28,10 @@ class MainWindow(QWidget):
         self.setMinimumSize(QSize(300, 350))
         main_layout.setContentsMargins(10, 10, 10, 10)
 
-        input_widget = ui_modules.inputs_module()
+        input_raw_variable = ui_modules.inputs_module()
+        input_widget = input_raw_variable[0]
+        input_button = input_raw_variable[1]
+
         visu_widget = ui_modules.visualization_module()
         copy_widget = ui_modules.copy_module()
         info_widget = ui_modules.informations_module()
@@ -34,3 +40,8 @@ class MainWindow(QWidget):
         main_layout.addWidget(visu_widget, 2, 1)
         main_layout.addWidget(copy_widget, 3, 1)
         main_layout.addWidget(info_widget, 4, 1)
+
+        input_button.clicked.connect(self.open_file_dialog_for_project_root_button)
+
+    def open_file_dialog_for_project_root_button(self):
+        self.project_root = func_open_file_dialog.open_file_dialog("Select project root", "")

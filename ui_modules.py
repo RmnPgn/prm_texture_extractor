@@ -12,7 +12,7 @@ from PySide2.QtWidgets import (
                                 QProgressBar
                                )
 from PySide2.QtCore import Qt
-
+import ui
 
 def inputs_module():
     """
@@ -51,7 +51,7 @@ def inputs_module():
     input_layout.setHorizontalSpacing(4)
     input_layout.setVerticalSpacing(2)
 
-    return input_widget
+    return input_widget, project_root_button
 
 
 def visualization_module():
