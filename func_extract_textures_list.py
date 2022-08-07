@@ -1,7 +1,7 @@
 import os
 
 
-def extract_list_of_all_textures_path_from_maya_save(maya_scene_source_path):
+def extract_texture_paths_from_scene(maya_scene_source_path):
     """
     Open the maya file and extract the path of the needed textures.
 

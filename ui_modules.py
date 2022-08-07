@@ -81,7 +81,13 @@ def visualization_module():
     visu_layout.addWidget(visualization_button)
     visu_layout.addWidget(list_widget)
 
-    return visu_widget
+    visu_module_dict = {
+        "widget":visu_widget,
+        "button":visualization_button,
+        "list_widget":list_widget
+    }
+
+    return visu_module_dict
 
 
 def copy_module():
@@ -97,12 +103,18 @@ def copy_module():
     copy_progress_bar = QProgressBar()
     launch_button = QPushButton("Launch transfer")
 
-    copy_progress_bar.setValue(50)
+    copy_progress_bar.setValue(0)
 
     copy_layout.addWidget(copy_progress_bar)
     copy_layout.addWidget(launch_button)
 
-    return copy_widget
+    copy_module_dict = {
+        "widget":copy_widget,
+        "progress_bar":copy_progress_bar,
+        "button":launch_button
+    }
+
+    return copy_module_dict
 
 
 def informations_module():
@@ -119,4 +131,9 @@ def informations_module():
 
     informations_layout.addWidget(info_label, 1, 1, Qt.AlignCenter)
 
-    return informations_widget
+    informations_module_dict = {
+        "widget":informations_widget,
+        "info_label":info_label
+    }
+
+    return informations_module_dict
