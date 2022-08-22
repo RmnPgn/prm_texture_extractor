@@ -83,7 +83,7 @@ class MainWindow(QWidget):
 
     def interact_for_destination_button(self):
         """
-        The action when the "destination button" is pressed.
+        The action when the "destination" button is pressed.
         Opens the directory browser, and updates the destination line edit when directory has been chosen.
         """
         self.project_destination = func_open_file_dialog.open_directory_dialog("Select destination folder", "")
